@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'nodes'
+    static_configs:
+      - targets:
+          - 'sicorax:9100'
+          - 'noris:9100'
+          - 'rea:9100'
