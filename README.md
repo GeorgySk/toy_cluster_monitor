@@ -18,7 +18,11 @@ The dashboard includes:
 - A JSON file _dashboards/dashboard.json_ defining the Grafana dashboard (used only in the first run).
 - Prometheus configuration file defining cluster nodes and scrape intervals.
 
-### Getting Started
+### Prerequisites
+- Prometheus [node exporters](https://github.com/prometheus/node_exporter) must be installed on all the nodes in the cluster.
+- Docker must be installed on the host where Grafana and Prometheus will be running at.
+
+### How to start monitoring
  1. **Start the stack:**
     ```shell
     docker compose up -d
@@ -29,7 +33,8 @@ The dashboard includes:
       - User: _admin_
       - Password: _admin_
 3. **Refresh to update the sources (first run only):** On first run, dashboards may show errors related to incorrect datasource references because the JSON references datasource UIDs that Grafana assigns dynamically. 
-Click _Refresh_ to link panels once the datasource is ready.
+Click _Refresh_ on individual panels.
+4. (Optional) **Delete/rename the _provisioning/dashboards/dashboards.yaml_ file**. This is necessary if you want to modify the dashboard and avoid saving it as a JSON file. 
 
 ### Notes
 - Access Prometheus UI: http://localhost:9090.
