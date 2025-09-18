@@ -32,12 +32,11 @@ The dashboard includes:
     - Default login (can be changed on the first run):
       - User: _admin_
       - Password: _admin_
-3. **Refresh to update the sources (first run only):** On first run, dashboards may show errors related to incorrect datasource references because the JSON references datasource UIDs that Grafana assigns dynamically. 
+3. **Import the dashboard** from the _dashboard.json_ file. 
+4. **Refresh dashboard panels (first run only):** On first run, dashboards will show errors related to incorrect datasource references because the JSON references datasource UIDs that Grafana assigns dynamically. 
 Click _Refresh_ on individual panels.
-4. (Optional) **Delete/rename the _provisioning/dashboards/dashboards.yaml_ file**. This is necessary if you want to modify the dashboard and avoid saving it as a JSON file. 
 
 ### Notes
 - Access Prometheus UI: http://localhost:9090.
 - Prometheus data is stored in the Docker volume _prometheus-data_.
 - Grafana data (dashboards, datasources) is stored in the Docker volume _grafana-storage_.
-- It is possible to add more dashboards in _dashboards_ folder. They should be picked automatically as it's specified in _provisioning/dashboards/dashboards.yaml_.
